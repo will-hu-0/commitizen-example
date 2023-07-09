@@ -21,6 +21,8 @@ npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
 npx husky add .husky/pre-commit "npm test" & git add .husky/pre-commit
 ```
 
+Check more for husky documentation [here](https://typicode.github.io/husky/#/?id=install) if you are interested.
+
 ## Try a commit message not following the conventional commit format
 
 ```
@@ -31,3 +33,13 @@ git commit -m "foo"
 
 See how `Husky` & `Commitlint` work together to prevent you from committing a message not following the conventional commit format.
 ![Not conventional](assets/git-commit-wrong-message.gif)
+
+## Let commitizen to help you create a conventional commit message
+
+```
+git-cz
+# or
+npm run commit
+```
+
+![Commitizen](assets/commitizen.gif)
