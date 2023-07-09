@@ -13,12 +13,21 @@
 ```
 # Install dependencies and init husky
 npm install & npm run prepare
+
+# Create a git hook for commitlint
+npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
+
+# Create a git hook for test
+npx husky add .husky/pre-commit "npm test" & git add .husky/pre-commit
 ```
 
 ## Try a commit message not following the conventional commit format
 
 ```
-touch foo.txt
-git add foo.txt
+touch abc.txt
+git add abc.txt
 git commit -m "foo"
 ```
+
+See how `Husky` & `Commitlint` work together to prevent you from committing a message not following the conventional commit format.
+![Not conventional](assets/git-commit-wrong-message.gif)
